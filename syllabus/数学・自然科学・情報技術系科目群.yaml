@@ -1,0 +1,55 @@
+- group: 数学・自然科学
+  subjects:
+    - name: 解析学A
+      credits: 1
+    - name: 解析学B
+      credits: 1
+    - name: 統計学
+      credits: 1
+      JABEE: true
+    - name: 数学特論A
+      credits: 1
+    - name: 数学特論B
+      credits: 1
+    - name: 近代物理学
+      credits: 2
+    - name: 物理特論A
+      credits: 1
+    - name: 物理特論B
+      credits: 1
+    - name: 化学特論A
+      credits: 1
+    - name: 化学特論B
+      credits: 1
+    - name: 線形代数学
+      credits: 2
+    - name: 解析力学
+      credits: 2
+    - name: 応用解析学I
+      credits: 2
+    - name: 応用解析学II
+      credits: 2
+    - name: 生物化学
+      credits: 2
+    - name: 原子物理学
+      credits: 2
+    - name: 初等代数
+      credits: 1
+    - name: 生体情報論
+      credits: 2
+    - name: 統計熱力学
+      credits: 2
+    - name: 健康科学特論
+      credits: 2
+- group: 情報技術
+  subjects:
+    - name: コンピュータシステム
+      credits: 2
+    - name: 都市地域解析論
+      credits: 2
+    - name: 情報システム工学
+      credits: 2
+    - name: 信頼性工学
+      credits: 2
+    - name: 工業デザイン論
+      credits: 2

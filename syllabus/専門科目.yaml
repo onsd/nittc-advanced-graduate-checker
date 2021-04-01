@@ -1,0 +1,146 @@
+- group: コンピュータシステム
+  subjects:
+    - name: マイクロコンピュータ工学A
+      credits: 1
+    - name: マイクロコンピュータ工学B
+      credits: 1
+    - name: マイクロコンピュータ工学演習
+      credits: 1
+    - name: 電子回路
+      credits: 1
+    - name: コンピュータアーキテクチャA
+      credits: 1
+    - name: コンピュータアーキテクチャB
+      credits: 1
+    - name: コンピュータアーキテクチャ演習
+      credits: 1
+      JABEE: true
+    - name: 論理回路設計
+      credits: 2
+      JABEE: true
+    - name: コンピュータアーキテクチャ応用
+      credits: 2
+      JABEE: true
+    - name: 電子工学
+      credits: 2
+- group: システムプログラム
+  subjects:
+    - name: 計算機言語論A
+      credits: 1
+    - name: 計算機言語論B
+      credits: 1
+    - name: 計算機言語論演習
+      credits: 1
+      JABEE: true
+    - name: アルゴリズムとデータ構造A
+      credits: 1
+    - name: アルゴリズムとデータ構造B
+      credits: 1
+    - name: アルゴリズムとデータ構造演習
+      credits: 1
+      JABEE: true
+    - name: システムプログラム
+      credits: 2
+      JABEE: true
+    - name: ソフトウェア設計A
+      credits: 1
+    - name: ソフトウェア設計B
+      credits: 1
+    - name: ソフトウェア設計演習
+      credits: 1
+      JABEE: true
+    - name: ソフトウェア工学
+      credits: 2
+    - name: 形式言語理論
+      credits: 2
+    - name: コンパイラ
+      credits: 2
+- group: 情報通信・信号処理
+  subjects:
+    - name: 情報回路理論
+      credits: 2
+    - name: 情報通信工学
+      credits: 2
+    - name: 情報理論
+      credits: 2
+    - name: 情報ネットワーク論
+      credits: 2
+      JABEE: true
+    - name: 制御工学
+      credits: 2
+    - name: ディジタル信号処理
+      credits: 2
+      JABEE: true
+    - name: ネットワークセキュリティ
+      credits: 2
+- group: コンピュータ応用
+  subjects:
+    - name: 画像処理工学
+      credits: 2
+    - name: 人工知能A
+      credits: 1
+    - name: 人工知能B
+      credits: 1
+    - name: 応用情報システム
+      credits: 2
+      JABEE: true
+    - name: 知識情報工学
+      credits: 2
+      JABEE: true
+    - name: パターン情報処理
+      credits: 2
+- group: 数理科学
+  subjects:
+    - name: 情報数学IIA
+      credits: 1
+    - name: 情報数学IIB
+      credits: 1
+    - name: システム工学
+      credits: 2
+    - name: 数値解析A
+      credits: 1
+    - name: 数値解析B
+      credits: 1
+    - name: 離散数学
+      credits: 2
+      JABEE: true
+    - name: 数理論理学
+      credits: 2
+- group: 実験・実習
+  subjects:
+    - name: エンジニアリングデザインA
+      credits: 1
+      required: true
+      JABEE: true
+    - name: エンジニアリングデザインB
+      credits: 1
+      required: true
+      JABEE: true
+    - name: エンジニアリングデザイン実習IA
+      credits: 1
+      required: true
+      JABEE: true
+    - name: エンジニアリングデザイン実習IB
+      credits: 1
+      required: true
+      JABEE: true
+    - name: 校外実習
+      credits: 2
+    - name: インターンシップ
+      credits: 4
+    - name: エンジニアリングデザイン実習II
+      credits: 2
+      JABEE: true
+      required: true
+    - name: 情報科学実験
+      credits: 4
+      JABEE: true
+      required: true
+    - name: 特別研究I
+      credits: 6
+      JABEE: true
+      required: true
+    - name: 特別研究II
+      credits: 6
+      JABEE: true
+      required: true

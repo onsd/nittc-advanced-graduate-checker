@@ -1,0 +1,66 @@
+- group: 人文・社会科学
+  subjects:
+    - name: 経済学I
+      credits: 2
+    - name: 経済学II
+      credits: 2
+    - name: 日本語表現
+      credits: 2
+    - name: 文学特論
+      credits: 2
+    - name: 社会科学特論I
+      credits: 2
+    - name: 人文科学特論II
+      credits: 2
+    - name: 保健体育IVA
+      credits: 1
+    - name: 保健体育IVB
+      credits: 1
+    - name: 保健体育VA
+      credits: 1
+    - name: 保健体育VB
+      credits: 1
+    - name: ドイツ語A
+      credits: 1
+    - name: ドイツ語B
+      credits: 1
+    - name: 技術者倫理
+      credits: 2
+      required: true
+      JABEE: true
+    - name: 歴史学
+      credits: 2
+      required: true
+      JABEE: true
+    - name: 日本の言葉と文化
+      credits: 2
+    - name: 地域と産業
+      credits: 2
+- group: 英語
+  subjects:
+    - name: 英語IA
+      credits: 1
+    - name: 英語IB
+      credits: 1
+    - name: 英語IIA
+      credits: 1
+    - name: 英語IIB
+      credits: 1
+    - name: 科学英語基礎IIA
+      credits: 1
+    - name: 科学英語基礎IIB
+      credits: 1
+    - name: 英語III
+      credits: 1
+    - name: 総合英語I
+      credits: 1
+      required: true
+      JABEE: true
+    - name: 技術英語
+      credits: 1
+    - name: 上級英語表現
+      credits: 2
+    - name: 総合英語II
+      credits: 2
+      required: true
+      JABEE: true
