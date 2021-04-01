@@ -49,6 +49,10 @@ func main() {
 		}
 	}
 
+	for _, syllabus := range syllabuses["専門科目"] {
+		fmt.Printf("--- %s:\n%v\n\n", syllabus.Group, syllabus)
+	}
+
 
 	fmt.Println("success fully finished")
 }
@@ -67,16 +71,12 @@ func parseSyllabuses() (map[string][]Syllabus, error) {
 		syllabuses[t] = syllabus
 	}
 
-	//for _, syllabus := range syllabuses["専門科目"] {
-	//	fmt.Printf("--- %s:\n%v\n\n", syllabus.Group, syllabus)
-	//}
 	return syllabuses, nil
 }
 
 
 func CreateTable(syllabuses []Syllabus) tview.Primitive{
 	var tables  []*tview.Table
-	fmt.Println(syllabuses)
 	for _, syllabus := range syllabuses {
 		table := tview.NewTable().
 			SetFixed(1, 1).
@@ -167,7 +167,6 @@ func CreateTable(syllabuses []Syllabus) tview.Primitive{
 	if len(rows) == 0 {
 		rows = append(rows, row)
 	}
-	fmt.Println(rows)
 
 	for _, row := range rows {
 		flex.AddItem(row, 0, 2, true)
