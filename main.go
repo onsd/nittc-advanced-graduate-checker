@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
+	"github.com/gdamore/tcell/v2"
+	"github.com/rivo/tview"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"strconv"
-
-	"github.com/gdamore/tcell/v2"
-	"github.com/rivo/tview"
 )
+
+// The application.
+var app = tview.NewApplication()
+var types =  []string{"専門科目", "人文・社会科学及び英語科目群", "数学・自然科学・情報技術系科目群"}
 
 type Syllabus struct {
 	Group    string    `yaml:"group"`
@@ -24,48 +27,56 @@ type Subject struct {
 }
 
 func main() {
-	types := []string{"専門科目", "人文・社会科学及び英語科目群", "数学・自然科学・情報技術系科目群"}
+	syllabuses, err := parseSyllabuses()
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, syllabus := range syllabuses{
+		table := CreateTable(syllabus)
+		app.SetInputCapture(func(event *tcell.EventKey) *tcell.EventKey {
+			if event.Key() == tcell.KeyEsc {
+				app.Stop()
+				return nil
+			}
+			if event.Key() == tcell.KeyCtrlC {
+				app.Stop()
+				return nil
+			}
+			return event
+		})
+		if err := app.SetRoot(table, true).EnableMouse(true).Run(); err != nil {
+			panic(err)
+		}
+	}
+
+
+	fmt.Println("success fully finished")
+}
+func parseSyllabuses() (map[string][]Syllabus, error) {
 	syllabuses := make(map[string][]Syllabus, 3)
 	for _, t := range types {
 		buf, err := ioutil.ReadFile(fmt.Sprintf("./original-syllabus/%s.yaml", t))
 		if err != nil {
-			fmt.Println(err)
-			return
+			return nil, err
 		}
+
 		syllabus := []Syllabus{}
 		if err := yaml.Unmarshal(buf, &syllabus); err != nil {
-			log.Fatalf("error: %v", err)
+			return nil, err
 		}
 		syllabuses[t] = syllabus
 	}
 
-	for _, syllabus := range syllabuses["専門科目"] {
-		fmt.Printf("--- %s:\n%v\n\n", syllabus.Group, syllabus)
-	}
-
-
-	table := createTable(syllabuses["専門科目"])
-	app := tview.NewApplication()
-	app.SetInputCapture(func(event *tcell.EventKey) *tcell.EventKey {
-		if event.Key() == tcell.KeyEsc {
-			app.Stop()
-			return nil
-		}
-		if event.Key() == tcell.KeyCtrlC {
-			app.Stop()
-			return nil
-		}
-		return event
-	})
-	if err := app.SetRoot(table, true).EnableMouse(true).Run(); err != nil {
-		panic(err)
-	}
-
-	fmt.Println("success fully finished")
+	//for _, syllabus := range syllabuses["専門科目"] {
+	//	fmt.Printf("--- %s:\n%v\n\n", syllabus.Group, syllabus)
+	//}
+	return syllabuses, nil
 }
 
-func createTable(syllabuses []Syllabus) tview.Primitive{
+
+func CreateTable(syllabuses []Syllabus) tview.Primitive{
 	var tables  []*tview.Table
+	fmt.Println(syllabuses)
 	for _, syllabus := range syllabuses {
 		table := tview.NewTable().
 			SetFixed(1, 1).
@@ -153,6 +164,9 @@ func createTable(syllabuses []Syllabus) tview.Primitive{
 			row = tview.NewFlex().SetDirection(tview.FlexRow)
 		}
 	}
+	if len(rows) == 0 {
+		rows = append(rows, row)
+	}
 	fmt.Println(rows)
 
 	for _, row := range rows {
@@ -161,4 +175,3 @@ func createTable(syllabuses []Syllabus) tview.Primitive{
 
 	return 	flex
 }
-
